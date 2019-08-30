@@ -493,12 +493,16 @@ function createPanZoom(domElement, options) {
       z = 0;
     if (e.keyCode === 38) {
       if (zoomOnUpDownArrow) {
+        e.preventDefault();
+        e.stopPropagation();
         z = -1;
       } else {
         y = 1; // up
       }
     } else if (e.keyCode === 40) {
       if (zoomOnUpDownArrow) {
+        e.preventDefault();
+        e.stopPropagation();
         z = 1;
       } else {
         y = -1; // down
