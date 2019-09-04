@@ -481,7 +481,10 @@ function createPanZoom(domElement, options) {
     isDirty = false;
 
     // TODO: Should I allow to cancel this?
-    panController.applyTransform(transform);
+    panController.applyTransform(
+      transform,
+      panController.getOwner().firstChild
+    );
 
     triggerEvent("transform");
     frameAnimation = 0;
